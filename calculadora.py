@@ -13,7 +13,7 @@ frame.pack()
 #---------------Imagen de fondo---------------------
 import os
 
-def find_image(name, path):
+def encontrar_imagen(name, path):
     for root, dirs, files in os.walk(path):
         if name in files:
             return os.path.join(root, name)
@@ -21,7 +21,9 @@ def find_image(name, path):
 try:
 
 	imagen=PhotoImage(file=find_image("matrix.png","."))
+	
 	fondo=Label(frame,image=imagen).place(x=-400,y=-400)
+	
 except:
 	pass
 
@@ -39,9 +41,27 @@ reset_pantalla=False
 
 numeropantalla=StringVar()
 
-pantalla=Entry(frame,width=15, textvariable=numeropantalla, font=(18), fg="#00FF00")
-pantalla.grid(row=1,column=1, padx=10, pady=30, columnspan=5)
-pantalla.config(background="black",font=("Uroob, bold", 26),fg="#03e106", justify="right")
+pantalla=Entry(
+	frame,width=15, 
+	textvariable=numeropantalla, 
+	font=(18), 
+	fg="#00FF00",
+)
+
+pantalla.grid(
+	row=1,
+	column=1, 
+	padx=10, 
+	pady=30, 
+	columnspan=5,
+)
+
+pantalla.config(
+	background="black",
+	font=("Uroob, bold", 26),
+	fg="#03e106", j
+	ustify="right",
+)
 
 #---------------Comandos de pulsar botones-----------
 
